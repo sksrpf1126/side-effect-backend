@@ -18,6 +18,7 @@ import sideeffect.project.security.*;
 public class WebSecurityConfig{
 
     private final JwtTokenProvider jwtTokenProvider;
+    private final SecurityExceptionHandlerFilter securityExceptionHandlerFilter;
     private final RefreshTokenProvider refreshTokenProvider;
 
 
@@ -48,7 +49,7 @@ public class WebSecurityConfig{
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .addFilterBefore(new JwtFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
-                .addFilterBefore(new SecurityExceptionHandlerFilter(), JwtFilter.class)
+                .addFilterBefore(securityExceptionHandlerFilter, JwtFilter.class)
 //                .formLogin()
 //                    .loginProcessingUrl("/api/user/login")
 //                    .usernameParameter("email")
