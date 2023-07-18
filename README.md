@@ -91,7 +91,9 @@ test─|
 - 알림 기능 구현
 
 ## 📃 ERD
-![사이드 이펙트 ERD](server/docs/images/erd.png)
+![사이드 이펙트 ERD](server/docs/images/erd.png)  
+  <p align = "center">
+  <img src="https://github.com/sksrpf1126/study/assets/62879192/7386cfb9-bcae-4fd1-8cc3-112ca877e55e" width = 90%>
 
 ## 🧑‍💻 만든 사람들
 
