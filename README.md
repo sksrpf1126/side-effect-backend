@@ -102,7 +102,7 @@ test─|
 	  
 ![사이드 이펙트 ERD](server/docs/images/erd.png)
 
-## 부딪힌 기술적 이슈 해결 과정
+## 내가 부딪힌 기술적 이슈 해결 과정
 
 ### [QueryDSL 도입을 통한 동적 쿼리 개선](https://github.com/sksrpf1126/study/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/QueryDSL%EC%9D%84%20%ED%86%B5%ED%95%9C%20%EB%8F%99%EC%A0%81%20%EC%BF%BC%EB%A6%AC%20%EA%B0%9C%EC%84%A0.md)
 
