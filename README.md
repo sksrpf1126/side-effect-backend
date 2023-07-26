@@ -23,7 +23,7 @@
 ![Swagger](https://img.shields.io/static/v1?style=for-the-badge&color=85EA2D&message=swagger&logo=swagger&logoColor=black&label=)
 ![Java](https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white)
 ![JpaHibernate](https://img.shields.io/static/v1?style=for-the-badge&color=59666C&message=JPA+hibernate&logo=hibernate&logoColor=white&label=)
-![QueryDsl](https://img.shields.io/static/v1?style=for-the-badge&color=2496ED&message=qauery+dsl&logo=querydsl&logoColor=black&label=)
+![QueryDsl](https://img.shields.io/static/v1?style=for-the-badge&color=2496ED&message=querydsl&logo=querydsl&logoColor=black&label=)
 ![MariaDB](https://img.shields.io/static/v1?style=for-the-badge&color=003545&message=mariaDB&logo=mariaDB&logoColor=white&label=)
 ![Redis](https://img.shields.io/static/v1?style=for-the-badge&color=DC382D&message=redis&logo=redis&logoColor=white&label=)
 ![Docker](https://img.shields.io/static/v1?style=for-the-badge&color=2496ED&message=docker&logo=docker&logoColor=white&label=)
