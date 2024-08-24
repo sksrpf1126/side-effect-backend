@@ -9,8 +9,6 @@
 
 [프론트 레포](https://github.com/Side-Effect-Team/side-effect-frontend)
 
-[API 문서](https://sideeffectproject.com/docs/swagger-ui/index.html)
-
 <br>
 
 ---
