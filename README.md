@@ -198,37 +198,37 @@ test─|
 
 ## 부딪힌 기술적 이슈 해결 과정
 
-### [QueryDSL 도입을 통한 동적 쿼리 개선](https://github.com/sksrpf1126/study/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/QueryDSL%EC%9D%84%20%ED%86%B5%ED%95%9C%20%EB%8F%99%EC%A0%81%20%EC%BF%BC%EB%A6%AC%20%EA%B0%9C%EC%84%A0.md)
+### QueryDSL 도입을 통한 동적 쿼리 개선 [[관련 포스팅]](https://github.com/sksrpf1126/study/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/QueryDSL%EC%9D%84%20%ED%86%B5%ED%95%9C%20%EB%8F%99%EC%A0%81%20%EC%BF%BC%EB%A6%AC%20%EA%B0%9C%EC%84%A0.md)
 
 처음부터 QueryDSL을 도입하지 않고, JPQL과 Spring Data JPA로 개발을 하다 필요성이 느껴질 때 도입함으로써 QueryDSL의 사용 이유를 체감하였습니다.
 
 JPQL로 작성되어 있던 동적 쿼리를 QueryDSL을 통해 리팩토링함으로써, 코드의 가독성과 조인쿼리나 조건에 들어갈 쿼리들을 메서드로 분리함으로써 재사용성을 향상시켰습니다.  
 또한, 문자열로 쿼리를 작성하는 JPQL의 문제점을 해결할 수 있었습니다.
 
-### [Count VS Exists 쿼리 선택](https://github.com/sksrpf1126/study/blob/main/JPA/Count%20%EC%BF%BC%EB%A6%AC%EC%99%80%20Exists%20%EC%BF%BC%EB%A6%AC.md)
+### Count VS Exists 쿼리 선택 [[관련 포스팅]](https://github.com/sksrpf1126/study/blob/main/JPA/Count%20%EC%BF%BC%EB%A6%AC%EC%99%80%20Exists%20%EC%BF%BC%EB%A6%AC.md)
 
 Count 쿼리는 조건에 맞는 데이터를 전부 카운팅을 한 뒤에 그 수를 반환하기 때문에 조건에 맞는 데이터의 존재 여부만을 판단할 때 사용한다면 성능 문제가 발생합니다.
 
 이러한 성능 문제를 Exists쿼리나 Limit 1을 통해 조건에 맞는 데이터가 있을 때 바로 반환되게 함으로써 해결하였습니다.
 
-### [좋아요 기능 인덱스 적용](https://github.com/sksrpf1126/study/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/side-effect%20INDEX%20%EC%A0%81%EC%9A%A9.md)
+### 좋아요 기능 인덱스 적용 [[관련 포스팅]](https://github.com/sksrpf1126/study/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/side-effect%20INDEX%20%EC%A0%81%EC%9A%A9.md)
 
 팀원분의 조언으로 게시글과 사용자의 아이디를 통해 좋아요 여부를 판단하여 토글 방식으로 동작하게 되는 기능에 인덱스를 적용하였습니다.  
 게시글 아이디와 사용자의 아이디에 복합 인덱스를 추가하였으며, 150만건의 데이터를 넣어서 테스트를 해보았을 때 약 11 ~ 12배의 성능이 향상된 것을 확인할 수 있었습니다.
 
-### [게시글 조회수 동시성 문제](https://github.com/sksrpf1126/study/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%EC%A1%B0%ED%9A%8C%EC%88%98%20%EB%8F%99%EC%8B%9C%EC%84%B1%20%EB%AC%B8%EC%A0%9C.md)
+### 게시글 조회수 동시성 문제 [[관련 포스팅]](https://github.com/sksrpf1126/study/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%EC%A1%B0%ED%9A%8C%EC%88%98%20%EB%8F%99%EC%8B%9C%EC%84%B1%20%EB%AC%B8%EC%A0%9C.md)
 
 JMeter를 통해 500개의 쓰레드로 동일한 게시글에 대해 조회API를 동시 요청을 하였을 때, 84의 조회수만 증가하였습니다.  
 문제를 해결하기 위해 JPA의 비관적 락을 도입하였으며, 정상적으로 500의 조회수 값이 증가가 되는 것을 확인할 수 있었습니다.
 
-### [ENUM 대소문자 처리](https://github.com/sksrpf1126/study/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/ENUM%20%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90%20%EC%B2%98%EB%A6%AC.md)
+### ENUM 대소문자 처리 [[관련 포스팅]](https://github.com/sksrpf1126/study/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/ENUM%20%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90%20%EC%B2%98%EB%A6%AC.md)
 
 @RequestParam, @ModelAttribute로 ENUM 타입을 받을 때 타입 컨버터를 커스텀해서 해결하였습니다.
 
 @RequestBody의 경우 ENUM 클래스에 대소문자를 처리하는 전역 메서드를 정의하고 해당 메서드에 @JsonCreator를 적용하였습니다.  
 그러면 ENUM 타입에 대해 역직렬화를 할 때 해당 메서드의 로직이 실행이 되기 때문에 @RequestBody에 대해서도 대소문자 구분없이 ENUM값을 처리할 수 있게 되었습니다.
 
-### <u>[Spring Security 필터에서 @ExceptionHandler 적용](https://github.com/sksrpf1126/study/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/Side%20Effect%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%95%84%ED%84%B0%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC.md)</u>
+### <u>Spring Security 필터에서 @ExceptionHandler 적용 [[관련 포스팅]](https://github.com/sksrpf1126/study/blob/main/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/Side%20Effect%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%95%84%ED%84%B0%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC.md)</u>
 
 기존 방식은 Spring Security의 커스텀한 필터들에서 예외가 발생하면 해당 예외를 따로 처리하는 필터를 정의하여 해당 필터에서 예외마다 적절한 응답을 보내주었습니다.
 
